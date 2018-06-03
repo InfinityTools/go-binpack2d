@@ -1,5 +1,5 @@
 # go-binpack2d
-*Go implementation of a two-dimensional rectangle bin packing algorithm.*
+[![GoDoc](https://godoc.org/github.com/InfinityTools/go-binpack2d?status.svg)](https://godoc.org/github.com/InfinityTools/go-binpack2d)
 
 ## About
 
