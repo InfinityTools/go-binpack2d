@@ -5,6 +5,10 @@
 
 Package `binpack2d` implements a two-dimensional rectangle bin packing algorithm in [Go](https://golang.org). It is loosely based on Jukka Jylänki's C++ implementation of [RectangleBinPack](https://github.com/juj/RectangleBinPack) -> MaxRectsBinPack.
 
+## Documentation
+
+For docs, see https://godoc.org/github.com/InfinityTools/go-binpack2d .
+
 ## License
 
 The package `binpack2d` is released under the BSD 2-clause license. See LICENSE for more details.
