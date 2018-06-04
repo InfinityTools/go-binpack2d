@@ -4,8 +4,13 @@
 *.o
 *.obj
 
+# Precompiled headers
+*.gch
+*.pch
+
 # Compiled Dynamic libraries
 *.so
+*.so.*
 *.dylib
 *.dll
 
@@ -17,8 +22,21 @@
 
 # Executables
 *.exe
+*.exe~
 *.out
 *.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
 
 # Eclipse specific
 .cproject
