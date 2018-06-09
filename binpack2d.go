@@ -115,7 +115,7 @@ func (p *Packer) ShrinkBin(binary bool) {
   p.height = newHeight
 }
 
-// Insert inserts a single rectangle to the bin by using the specified packing rule. 
+// Insert inserts a single rectangle to the bin by using the specified packing rule.
 // Returns the packed Rectangle structure, or sets "ok" to false if no fit could be found.
 func (p *Packer) Insert(width, height, rule int) (rect Rectangle, ok bool) {
   ok = false
@@ -376,18 +376,18 @@ func (p *Packer) splitFreeNode(freeIdx int, usedNode Rectangle) bool {
   if usedNode.X < p.freeRects[freeIdx].X + p.freeRects[freeIdx].W && usedNode.X + usedNode.W > p.freeRects[freeIdx].X {
     // New node at the top side of the used node.
     if usedNode.Y > p.freeRects[freeIdx].Y && usedNode.Y < p.freeRects[freeIdx].Y + p.freeRects[freeIdx].H {
-      newNode := Rectangle{p.freeRects[freeIdx].X, 
-                           p.freeRects[freeIdx].Y, 
-                           p.freeRects[freeIdx].W, 
+      newNode := Rectangle{p.freeRects[freeIdx].X,
+                           p.freeRects[freeIdx].Y,
+                           p.freeRects[freeIdx].W,
                            usedNode.Y - p.freeRects[freeIdx].Y}
       addRect(&p.freeRects, len(p.freeRects), newNode)
     }
 
     // New node at the bottom side of the used node.
     if usedNode.Y + usedNode.H < p.freeRects[freeIdx].Y + p.freeRects[freeIdx].H {
-      newNode := Rectangle{p.freeRects[freeIdx].X, 
-                           usedNode.Y + usedNode.H, 
-                           p.freeRects[freeIdx].W, 
+      newNode := Rectangle{p.freeRects[freeIdx].X,
+                           usedNode.Y + usedNode.H,
+                           p.freeRects[freeIdx].W,
                            p.freeRects[freeIdx].Y + p.freeRects[freeIdx].H - (usedNode.Y + usedNode.H)}
       addRect(&p.freeRects, len(p.freeRects), newNode)
     }
@@ -396,18 +396,18 @@ func (p *Packer) splitFreeNode(freeIdx int, usedNode Rectangle) bool {
   if usedNode.Y < p.freeRects[freeIdx].Y + p.freeRects[freeIdx].H && usedNode.Y + usedNode.H > p.freeRects[freeIdx].Y {
     // New node at the left side of the used node.
     if usedNode.X > p.freeRects[freeIdx].X && usedNode.X < p.freeRects[freeIdx].X + p.freeRects[freeIdx].W {
-      newNode := Rectangle{p.freeRects[freeIdx].X, 
-                           p.freeRects[freeIdx].Y, 
-                           usedNode.X - p.freeRects[freeIdx].X, 
+      newNode := Rectangle{p.freeRects[freeIdx].X,
+                           p.freeRects[freeIdx].Y,
+                           usedNode.X - p.freeRects[freeIdx].X,
                            p.freeRects[freeIdx].H}
       addRect(&p.freeRects, len(p.freeRects), newNode)
     }
 
     // New node at the right side of the used node.
     if usedNode.X + usedNode.W < p.freeRects[freeIdx].X + p.freeRects[freeIdx].W {
-      newNode := Rectangle{usedNode.X + usedNode.W, 
-                           p.freeRects[freeIdx].Y, 
-                           p.freeRects[freeIdx].X + p.freeRects[freeIdx].W - (usedNode.X + usedNode.W), 
+      newNode := Rectangle{usedNode.X + usedNode.W,
+                           p.freeRects[freeIdx].Y,
+                           p.freeRects[freeIdx].X + p.freeRects[freeIdx].W - (usedNode.X + usedNode.W),
                            p.freeRects[freeIdx].H}
       addRect(&p.freeRects, len(p.freeRects), newNode)
     }
